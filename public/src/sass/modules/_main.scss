@@ -1,0 +1,103 @@
+body{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    flex-direction: column;
+}
+
+.background{
+    background-image: url("../image/back.png");
+    height: 430px;
+    width: 55%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.pk1{
+    position: relative;
+    top: 280px;
+    left: 40px;
+    img{
+        height: 150px;
+    }
+}
+
+.pk2{
+    position: absolute;
+    left: 490px;
+    top: -140px;
+}
+.choix{
+    position: absolute;
+    top:150px;
+    right: 280px;
+}
+
+.txtbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 200px;
+    background-color: rgb(50, 50, 50);
+}
+.vanish{
+    opacity: 0%;
+    display: none;
+}
+.opacity{
+    opacity: 0;
+}
+
+.btn.btn-outline-light{
+    height: 80px;
+    width: 200px;
+}
+.vie1{
+    height: 70px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.59);
+    position: absolute;
+    left: 400px;
+    top: 30px;
+    border-radius: 5%;
+}
+
+.vie2{
+    height: 70px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.59);
+    position: absolute;
+    right: 320px;
+    bottom: 120px;
+    border-radius: 5%;
+}
+
+#name1{
+    color: white;
+}
+
+#name2{
+    color: white;
+}
+
+#niveau1{
+    color: white;
+    font-size: 80%;
+}
+
+#niveau2{
+    color: white;
+    font-size: 80%;
+}
+.mainBar{
+    display: flex;
+    justify-content: space-between;
+}
+
+#textCombat{
+    color: white;
+    text-align: center;
+}
