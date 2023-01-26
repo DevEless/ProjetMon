@@ -2,17 +2,7 @@ body {
   justify-content: center;
   display: flex;
   align-items: center;
-  background-color: black;
   flex-direction: column;
-}
-
-.background {
-  background-image: url("../image/back.png");
-  height: 430px;
-  width: 55%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 .pk1 {
@@ -105,4 +95,13 @@ body {
 #textCombat {
   color: white;
   text-align: center;
+}
+
+.background {
+  background-image: url("../image/back.png");
+  height: 430px;
+  width: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }

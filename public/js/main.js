@@ -18,10 +18,12 @@ let tableRandB = [degatLF, degatCC, defSpecialM, degatGH]
 //div
 const vieJunko = document.querySelector("#vieJunko");
 const vieBrasegali = document.querySelector("#vieBrasegali");
+const Opacity = document.getElementsByClassName('opacity')
 
 const divChoix = document.querySelector('.choix')
 const divPk1 = document.querySelector('.pk1')
 const divPk2 = document.querySelector('.pk2')
+const sectionBack =  document.querySelectorAll('section')[0]
 const sectionAtk = document.querySelectorAll('section')[1]
 const text = document.querySelector('#textCombat')
 const vie1 = document.querySelector('#vie1')
@@ -113,6 +115,70 @@ function attributeAtkPk2() {
 }
 
 
+function couleurBar(){
+
+    if(Junko.health >= 50){
+        vieJunko.style.backgroundColor = "green"
+    }
+    
+    if(Junko.health <= 50){
+        vieJunko.style.backgroundColor = "orange"
+    }
+
+    if(Junko.health <= 25){
+        vieJunko.style.backgroundColor = "red"
+    }
+
+    if(Brasegali.health >= 50){
+        vieBrasegali.style.backgroundColor = "green"
+    }
+    
+    if(Brasegali.health <= 50){
+        vieBrasegali.style.backgroundColor = "orange"
+    }
+
+    if(Brasegali.health <= 25){
+        vieBrasegali.style.backgroundColor = "red"
+    }
+}
+
+
+function couleurBar2(){
+
+    if(Junko.health >= 50){
+        vieBrasegali.style.backgroundColor = "green"
+
+    }
+    
+    if(Junko.health <= 50){
+        vieBrasegali.style.backgroundColor = "orange"
+    }
+
+    if(Junko.health <= 25){
+        vieBrasegali.style.backgroundColor = "red"
+
+    }
+
+    if(Brasegali.health >= 50){
+        vieJunko.style.backgroundColor = "green"
+    }
+    
+    if(Brasegali.health <= 50){
+        vieJunko.style.backgroundColor = "orange"
+    }
+
+    if(Brasegali.health <= 25){
+        vieJunko.style.backgroundColor = "red"
+    }
+}
+
+
+function setBackground(){
+    sectionBack.setAttribute('id', '')
+    sectionBack.classList.add('background')
+
+    
+}
 
 //ADDEVENTLISTENER
 
@@ -128,6 +194,8 @@ function attributeAtkPk2() {
 btnChoix1.addEventListener("click", () => {
     setAtributes()
     attributeAtkPk1()
+    setBackground()
+    couleurBar()
     const PkJ = document.createElement('span')
     PkJ.innerHTML = '<img src="./public/image/PK1DOS.png" alt="">'
     divPk1.appendChild(PkJ)
@@ -173,6 +241,7 @@ btnChoix1.addEventListener("click", () => {
             text.textContent = ` Junko Utilise Lance Feuille !`
             Brasegali.health -= degatLFF
             vieBrasegali.style.width = `${Brasegali.health}%`;
+            couleurBar()
 
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -201,6 +270,7 @@ btnChoix1.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Brasegali utilise Lance-Flamme! `;
                     vieJunko.style.width = `${Junko.health}%`;
+                    couleurBar()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Junko ?`;
@@ -228,6 +298,7 @@ btnChoix1.addEventListener("click", () => {
             text.textContent = ` Junko Utilise Tranche-Herbe !`
             Brasegali.health -= degatTH
             vieBrasegali.style.width = `${Brasegali.health}%`;
+            couleurBar()
 
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -256,6 +327,7 @@ btnChoix1.addEventListener("click", () => {
             setTimeout(() => {
                 text.textContent = `Brasegali utilise Lance-Flamme! `;
                 vieJunko.style.width = `${Junko.health}%`;
+                couleurBar()
             }, "1000")
             setTimeout(() => {
                 text.textContent = `Que doit faire Junko ?`;
@@ -283,6 +355,7 @@ btnChoix1.addEventListener("click", () => {
             text.textContent = ` Junko Drain de vie GO !`
             Junko.health += defSpecialM
             vieBrasegali.style.width = `${Brasegali.health}%`;
+            couleurBar()
 
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -311,6 +384,7 @@ btnChoix1.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Brasegali utilise Close-Comnbat! `;
                     vieJunko.style.width = `${Junko.health}%`;
+                    couleurBar()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Junko ?`;
@@ -337,6 +411,7 @@ btnChoix1.addEventListener("click", () => {
             text.textContent = ` Junko Utilise Vampi-Graine !`
             Brasegali.health -= degatVG
             vieBrasegali.style.width = `${Brasegali.health}%`;
+            couleurBar()
   
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -366,6 +441,7 @@ btnChoix1.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Brasegali utilise Poing Ardent! `;
                     vieJunko.style.width = `${Junko.health}%`;
+                    couleurBar()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Junko ?`;
@@ -398,6 +474,8 @@ btnChoix1.addEventListener("click", () => {
 btnChoix2.addEventListener("click", () => {
     setAtributes()
     attributeAtkPk2()
+    setBackground()
+    couleurBar2()
     const PkJ = document.createElement('span')
     PkJ.innerHTML = '<img src="./public/image/PK2DOS.png" alt="">'
     divPk1.appendChild(PkJ)
@@ -443,6 +521,7 @@ btnChoix2.addEventListener("click", () => {
             text.textContent = ` Brasegali utilise Lance FLamme !`
             Junko.health -= degatLF
             vieBrasegali.style.width = `${Junko.health}%`;
+            couleurBar2()
 
 
             btnAtk1.style.pointerEvents = 'none'
@@ -473,6 +552,7 @@ btnChoix2.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Junko utilise Queue de fer ! `;
                     vieJunko.style.width = `${Brasegali.health}%`;
+                    couleurBar2()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Brasegali ?`;
@@ -497,6 +577,7 @@ btnChoix2.addEventListener("click", () => {
             Junko.health -= degatCC
             
             vieBrasegali.style.width = `${Junko.health}%`;
+            couleurBar2()
 
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -526,6 +607,7 @@ btnChoix2.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Junko utilise Tranche-feuille! `;
                     vieJunko.style.width = `${Brasegali.health}%`;
+                    couleurBar2()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Brasegali ?`;
@@ -547,8 +629,9 @@ btnChoix2.addEventListener("click", () => {
     btnAtk3.addEventListener("click", () => {
         if (Junko.health > 0 && Brasegali.health > 0) {
             text.textContent = ` Brasegali Medite et gagne des HP!`
-            Junko.health += defSpecialM
+            Brasegali.health += defSpecialM
             vieBrasegali.style.width = `${Junko.health}%`;
+            couleurBar2()
 
 
         }
@@ -559,6 +642,7 @@ btnChoix2.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Junko utilise Ultra Laser! `;
                     vieJunko.style.width = `${Brasegali.health}%`;
+                    couleurBar()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Brasegali ?`;
@@ -581,6 +665,7 @@ btnChoix2.addEventListener("click", () => {
             text.textContent = ` Brasegali utilise GarlicHOO`
             Junko.health -= degatGH
             vieBrasegali.style.width = `${Junko.health}%`;
+            couleurBar2()
 
             btnAtk1.style.pointerEvents = 'none'
             setTimeout(() => {
@@ -610,6 +695,7 @@ btnChoix2.addEventListener("click", () => {
                 setTimeout(() => {
                     text.textContent = `Junko utilise Close-Combat! `;
                     vieJunko.style.width = `${Brasegali.health}%`;
+                    couleurBar2()
                 }, "1000")
                 setTimeout(() => {
                     text.textContent = `Que doit faire Brasegali ?`;
